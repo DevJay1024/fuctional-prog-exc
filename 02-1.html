@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--클로저를 들여다 볼 것-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function curry(func) {
+                console.log("before return a");
+                return function (a) {
+                    console.log("before return b");
+                    return function (b) {
+                        console.log("before execute func");
+                        return func(a, b);
+                    };
+                };
+            }
+
+            function sum(a, b) {
+                return a + b;
+            }
+
+            console.log(`curry-sum : ${curry(sum)(2)(3)}`);
+        </script>
+    </body>
+</html>

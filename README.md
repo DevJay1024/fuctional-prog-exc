@@ -1,1 +1,1 @@
-# fuctional-prog-exc
+# functional-prog-exc
